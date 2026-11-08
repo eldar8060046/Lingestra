@@ -6,7 +6,13 @@ confidence/latency -> clarification prompt when unsure -> sentence pasted into t
 meeting chat. No bot joins the meeting; video never leaves the laptop.
 
 ## Setup
-    python -m venv .venv && .venv/bin/pip install -r requirements.txt   # Windows: .venv\Scripts\pip
+    python -m venv .venv && .venv/bin/pip install -r requirements.txt  
+    
+  
+   # Windows: 
+   python -m venv venv
+   venv\Scripts\activate
+  pip install -r requirements.txt
 
 ## Data pipeline (already run once; data/ is large and not meant for git)
     python -m lingestra.data.scrape_dictionary      # manifest + 1244 videos (1 req/s, resumable)

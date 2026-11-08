@@ -1,0 +1,103 @@
+{
+ "rows": {
+  "same-take|2": {
+   "n_seq": 150,
+   "bad_episode": 0,
+   "seq_acc": 0.0,
+   "word_acc": 0.3466666666666666,
+   "sub": 0.0,
+   "dele": 0.6533333333333333,
+   "ins": 0.0,
+   "q_seq": 0.2866666666666667,
+   "q_per_word": 0.14333333333333334,
+   "max_frame_ms": 11.32062894636571,
+   "worst_frame_ms": 55.03659199894173
+  },
+  "same-take|3": {
+   "n_seq": 150,
+   "bad_episode": 1,
+   "seq_acc": 0.0,
+   "word_acc": 0.17333333333333334,
+   "sub": 0.0,
+   "dele": 0.8266666666666668,
+   "ins": 0.0,
+   "q_seq": 0.52,
+   "q_per_word": 0.17333333333333334,
+   "max_frame_ms": 20.004147545744978,
+   "worst_frame_ms": 62.593876995379105
+  },
+  "cross-take|2": {
+   "n_seq": 150,
+   "bad_episode": 0,
+   "seq_acc": 0.0,
+   "word_acc": 0.040000000000000015,
+   "sub": 0.01,
+   "dele": 0.95,
+   "ins": 0.0,
+   "q_seq": 0.8933333333333333,
+   "q_per_word": 0.44666666666666666,
+   "max_frame_ms": 16.767611753748497,
+   "worst_frame_ms": 59.516305998840835
+  },
+  "cross-take|3": {
+   "n_seq": 150,
+   "bad_episode": 0,
+   "seq_acc": 0.0,
+   "word_acc": 0.011111111111111094,
+   "sub": 0.0,
+   "dele": 0.9888888888888889,
+   "ins": 0.0,
+   "q_seq": 0.9733333333333333,
+   "q_per_word": 0.3244444444444444,
+   "max_frame_ms": 27.028350260079606,
+   "worst_frame_ms": 93.79435500159161
+  },
+  "cross-take, matchable signs|2": {
+   "n_seq": 150,
+   "bad_episode": 0,
+   "seq_acc": 0.0,
+   "word_acc": 0.11000000000000001,
+   "sub": 0.0,
+   "dele": 0.89,
+   "ins": 0.0,
+   "q_seq": 0.7933333333333333,
+   "q_per_word": 0.39666666666666667,
+   "max_frame_ms": 14.5887088336652,
+   "worst_frame_ms": 38.27895900030853
+  },
+  "cross-take, matchable signs|3": {
+   "n_seq": 150,
+   "bad_episode": 0,
+   "seq_acc": 0.0,
+   "word_acc": 0.024444444444444446,
+   "sub": 0.0,
+   "dele": 0.9755555555555556,
+   "ins": 0.0,
+   "q_seq": 0.9466666666666667,
+   "q_per_word": 0.31999999999999995,
+   "max_frame_ms": 20.902791526896177,
+   "worst_frame_ms": 64.94008799927542
+  }
+ },
+ "single": {
+  "same-take": {
+   "n": 30.0,
+   "false_split": 0.0,
+   "correct": 0.9866666666666667
+  },
+  "cross-take": {
+   "n": 30.0,
+   "false_split": 0.0,
+   "correct": 0.21333333333333332,
+   "unenrolled": 40.0,
+   "unenrolled_word": 0.035,
+   "unenrolled_words": 0.035
+  }
+ },
+ "timing": {
+  "ms_mean": 148.69607500198376,
+  "ms_max": 191.90590800280916,
+  "frames": 200,
+  "templates": 150
+ }
+}

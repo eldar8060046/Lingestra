@@ -1,0 +1,65 @@
+........................................................................ [ 26%]
+........................................................................ [ 52%]
+.........F.............................................................. [ 78%]
+..........................................................               [100%]
+=================================== FAILURES ===================================
+______ test_real_worker_confirm_emits_learn_and_commands_are_thread_safe _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1e2a168c80>
+
+    def test_real_worker_confirm_emits_learn_and_commands_are_thread_safe(monkeypatch):
+        from lingestra.app import worker as W
+        e = Env("test_store_learning_worker")
+        raw = stream(fr(QUERY), tail_s=6.0)[0]
+    
+        class Slow:                              # a camera-like source: frames arrive over a few seconds
+            last_frame_bgr = None
+            def __iter__(self):
+                for i, f in enumerate(raw):
+                    time.sleep(0.015)
+                    yield f, i / FPS
+            def close(self): pass
+        monkeypatch.setattr(W, "make_source", lambda spec, loop_speed=1.0: Slow())
+        wk = W.RecognitionWorker("webcam", None, send_mode="none", templates=e.lib.templates())
+        got, skipped, evs = [], [], []
+        wk.learn_ready.connect(got.append); wk.learn_skipped.connect(skipped.append)
+        wk.events.connect(evs.extend)
+        wk.set_learning(True)
+        for _ in range(50):                      # a burst of commands from the UI thread before / during the run
+            wk.set_learning(True)
+        wk.start()
+        t0 = time.time()
+        while not any(x.kind == "clarify" for x in evs) and time.time() - t0 < 20:
+            pump()
+        assert any(x.kind == "clarify" for x in evs)
+        wk.confirm("alpha")
+        t0 = time.time()
+        while not got and not skipped and time.time() - t0 < 20 and wk.isRunning():
+            pump()
+        wk.stop(); wk.wait(5000)
+>       assert len(got) == 1 and got[0]["label"] == "alpha" and got[0]["window"].shape[1:] == (67, 3)
+E       assert (0 == 1)
+E        +  where 0 = len([])
+
+tests/test_learning.py:333: AssertionError
+=============================== warnings summary ===============================
+tests/test_app_library_ui.py::test_real_worker_capture
+  /home/eldar/Desktop/Lingestra/.venv/lib/python3.12/site-packages/urllib3/contrib/socks.py:50: DependencyWarning: SOCKS support in urllib3 requires the installation of optional dependencies: specifically, PySocks.  For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#socks-proxies
+    warnings.warn(
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:123: RuntimeWarning: All-NaN slice encountered
+    ref = np.nanmedian(seq[:, [L_HIP, R_HIP], 1], axis=1)
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:124: RuntimeWarning: All-NaN slice encountered
+    sh = np.nanmedian(seq[:, [L_SH, R_SH], 1], axis=1)
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:125: RuntimeWarning: All-NaN slice encountered
+    up = np.nan_to_num(ref - np.nanmin(seq[:, [L_WR, R_WR], 1], axis=1), nan=-1.0)  # wrist above hip
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_learning.py::test_real_worker_confirm_emits_learn_and_commands_are_thread_safe
+1 failed, 273 passed, 4 warnings in 603.73s (0:10:03)

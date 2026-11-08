@@ -1,0 +1,20 @@
+........................................................................ [ 24%]
+........................................................................ [ 48%]
+........................................................................ [ 72%]
+........................................................................ [ 97%]
+........                                                                 [100%]
+=============================== warnings summary ===============================
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:134: RuntimeWarning: All-NaN slice encountered
+    return np.zeros(0)
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:135: RuntimeWarning: All-NaN slice encountered
+    ref = np.nanmedian(seq[:, [L_HIP, R_HIP], 1], axis=1)
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:136: RuntimeWarning: All-NaN slice encountered
+    sh = np.nanmedian(seq[:, [L_SH, R_SH], 1], axis=1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+296 passed, 3 warnings in 787.49s (0:13:07)

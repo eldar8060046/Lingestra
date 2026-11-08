@@ -1,0 +1,1 @@
+next-sign bar 0.85 only (NO settle rule): same-take exact 90%, words shown early 96% | cross-take exact 33%, words shown early 91% (n=87) | single signs cross-take: split 7%, right 20%, un-enrolled->word 8%

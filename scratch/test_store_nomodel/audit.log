@@ -1,0 +1,1 @@
+{"action": "settings_update", "actor": "signer", "extra": {"key": "threshold"}, "hash": "39e58c707e5f71bc161adc3debb5e1deed77fd9b86d4411964caf8dbcd31b411", "id": "settings", "prev": "0000000000000000000000000000000000000000000000000000000000000000", "ts": 1794156436.5438192}

@@ -1,0 +1,14 @@
+numpy
+requests
+opencv-python
+mediapipe
+scikit-learn
+tensorflow-cpu
+PySide6>=6.6
+cryptography
+pyperclip
+pynput
+keyring
+pytest
+# optional, experimental Google Meet automation mode only:
+# playwright

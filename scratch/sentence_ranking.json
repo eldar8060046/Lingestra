@@ -1,0 +1,257 @@
+[
+ {
+  "sentence": "Mother Cooking Biryani",
+  "n": 12,
+  "exact": 1.0,
+  "word_acc": 1.0,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.0,
+  "asked": 0.0,
+  "min_quality": 0.9538461538461539,
+  "clips": [
+   1,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Father Love Mother",
+  "n": 12,
+  "exact": 1.0,
+  "word_acc": 1.0,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.0,
+  "asked": 0.0,
+  "min_quality": 0.9090909090909091,
+  "clips": [
+   1,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Doctor helps Mother",
+  "n": 12,
+  "exact": 0.75,
+  "word_acc": 0.9166666666666666,
+  "sub": 0.0,
+  "dele": 0.08333333333333333,
+  "ins": 0.0,
+  "asked": 0.25,
+  "min_quality": 1.0,
+  "clips": [
+   2,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Mother wants Medicine",
+  "n": 12,
+  "exact": 1.0,
+  "word_acc": 1.0,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.0,
+  "asked": 0.0,
+  "min_quality": 1.0,
+  "clips": [
+   1,
+   2,
+   1
+  ]
+ },
+ {
+  "sentence": "Mother Headache Call Doctor",
+  "n": 12,
+  "exact": 0.8333333333333334,
+  "word_acc": 0.9583333333333334,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.041666666666666664,
+  "asked": 0.0,
+  "min_quality": 0.8888888888888888,
+  "clips": [
+   1,
+   1,
+   1,
+   2
+  ]
+ },
+ {
+  "sentence": "Teacher Read Book",
+  "n": 6,
+  "exact": 1.0,
+  "word_acc": 1.0,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.0,
+  "asked": 0.8333333333333334,
+  "min_quality": 0.7235555555555555,
+  "clips": [
+   2,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Sister Read Book",
+  "n": 6,
+  "exact": 1.0,
+  "word_acc": 1.0,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.0,
+  "asked": 0.0,
+  "min_quality": 0.7235555555555555,
+  "clips": [
+   1,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Brother wants drink",
+  "n": 12,
+  "exact": 1.0,
+  "word_acc": 1.0,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.0,
+  "asked": 0.0,
+  "min_quality": 0.9259259259259259,
+  "clips": [
+   1,
+   2,
+   1
+  ]
+ },
+ {
+  "sentence": "Father driving Hospital wards",
+  "n": 12,
+  "exact": 0.0,
+  "word_acc": 0.6666666666666667,
+  "sub": 0.0,
+  "dele": 0.3333333333333333,
+  "ins": 0.0,
+  "asked": 0.08333333333333333,
+  "min_quality": 0.631578947368421,
+  "clips": [
+   1,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Teacher Explain Exam",
+  "n": 12,
+  "exact": 1.0,
+  "word_acc": 1.0,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.0,
+  "asked": 0.8333333333333334,
+  "min_quality": 1.0,
+  "clips": [
+   2,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Mother drink Medicine",
+  "n": 12,
+  "exact": 1.0,
+  "word_acc": 1.0,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.0,
+  "asked": 0.0,
+  "min_quality": 0.9259259259259259,
+  "clips": [
+   1,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Brother Write Name",
+  "n": 12,
+  "exact": 0.0,
+  "word_acc": 0.6666666666666667,
+  "sub": 0.0,
+  "dele": 0.3333333333333333,
+  "ins": 0.0,
+  "asked": 0.0,
+  "min_quality": 0.6859171597633137,
+  "clips": [
+   1,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Doctor Wait",
+  "n": 12,
+  "exact": 0.75,
+  "word_acc": 0.875,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.125,
+  "asked": 0.08333333333333333,
+  "min_quality": 0.98,
+  "clips": [
+   2,
+   1
+  ]
+ },
+ {
+  "sentence": "How Are You Fine",
+  "n": 12,
+  "exact": 0.8333333333333334,
+  "word_acc": 0.9166666666666666,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.08333333333333333,
+  "asked": 0.4166666666666667,
+  "min_quality": 1.0,
+  "clips": [
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Father work School",
+  "n": 12,
+  "exact": 1.0,
+  "word_acc": 1.0,
+  "sub": 0.0,
+  "dele": 0.0,
+  "ins": 0.0,
+  "asked": 0.0,
+  "min_quality": 0.9090909090909091,
+  "clips": [
+   1,
+   1,
+   1
+  ]
+ },
+ {
+  "sentence": "Mother Love Family",
+  "n": 12,
+  "exact": 0.75,
+  "word_acc": 0.9166666666666666,
+  "sub": 0.0,
+  "dele": 0.08333333333333333,
+  "ins": 0.0,
+  "asked": 0.25,
+  "min_quality": 0.984375,
+  "clips": [
+   1,
+   1,
+   1
+  ]
+ }
+]

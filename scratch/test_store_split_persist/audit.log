@@ -1,0 +1,2 @@
+{"action": "settings_update", "actor": "signer", "extra": {"key": "threshold"}, "hash": "6a2377ff3d6a392fe4469d22f9fed1dcd6c50e34feac17149d051d1cf43af1f3", "id": "settings", "prev": "0000000000000000000000000000000000000000000000000000000000000000", "ts": 1794156534.1748369}
+{"action": "settings_update", "actor": "signer", "extra": {"key": "my_signs_split"}, "hash": "8396d55c46b851a7eb48f789c3f4cc8ad8af0d2f98a980f3caa672903e76fba5", "id": "settings", "prev": "6a2377ff3d6a392fe4469d22f9fed1dcd6c50e34feac17149d051d1cf43af1f3", "ts": 1794156534.471405}

@@ -1,0 +1,2 @@
+{"action": "blob_save", "actor": "signer-admin", "extra": {}, "hash": "53f5b2eb726dbda7745624ac0b900eb5306eb795b1f8c7b865f5b41cff0cc5b7", "id": "library/active", "prev": "0000000000000000000000000000000000000000000000000000000000000000", "ts": 1794157158.2065141}
+{"action": "library_set_active_many", "actor": "signer-admin", "extra": {"count": 30, "on": true}, "hash": "c9f7f4697cb1eefa36ccaaa4bb04ee50332a3765a33c1430bb660d117952caac", "id": "batch", "prev": "53f5b2eb726dbda7745624ac0b900eb5306eb795b1f8c7b865f5b41cff0cc5b7", "ts": 1794157158.2072937}

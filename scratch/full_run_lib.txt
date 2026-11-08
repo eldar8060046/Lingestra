@@ -1,0 +1,22 @@
+........................................................................ [ 34%]
+........................................................................ [ 69%]
+...............................................................          [100%]
+=============================== warnings summary ===============================
+tests/test_app_library_ui.py::test_real_worker_capture
+  /home/eldar/Desktop/Lingestra/.venv/lib/python3.12/site-packages/urllib3/contrib/socks.py:50: DependencyWarning: SOCKS support in urllib3 requires the installation of optional dependencies: specifically, PySocks.  For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#socks-proxies
+    warnings.warn(
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:123: RuntimeWarning: All-NaN slice encountered
+    ref = np.nanmedian(seq[:, [L_HIP, R_HIP], 1], axis=1)
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:124: RuntimeWarning: All-NaN slice encountered
+    sh = np.nanmedian(seq[:, [L_SH, R_SH], 1], axis=1)
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:125: RuntimeWarning: All-NaN slice encountered
+    up = np.nan_to_num(ref - np.nanmin(seq[:, [L_WR, R_WR], 1], axis=1), nan=-1.0)  # wrist above hip
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+207 passed, 4 warnings in 292.45s (0:04:52)

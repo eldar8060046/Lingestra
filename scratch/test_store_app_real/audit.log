@@ -1,0 +1,2 @@
+{"action": "settings_update", "actor": "signer", "extra": {"key": "threshold"}, "hash": "471c98731f431d496501e3b3f1b16625cbfc48e7b0951f46362b8fb7bdff9be6", "id": "settings", "prev": "0000000000000000000000000000000000000000000000000000000000000000", "ts": 1794156765.725512}
+{"action": "save", "actor": "system", "extra": {}, "hash": "dc4403a02fe65d401e6eb31794cba2e2442f3f487906ef9a62ec14cd79904529", "id": "b90a5b34ad9547c9a6401b3c4a1f3211", "prev": "471c98731f431d496501e3b3f1b16625cbfc48e7b0951f46362b8fb7bdff9be6", "ts": 1794156769.4219453}

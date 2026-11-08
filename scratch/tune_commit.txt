@@ -1,0 +1,5 @@
+A baseline (old rule)            same-take: exact 88% early 89% lastEarly 3% | cross-take: exact 78% early 35% lastEarly 0% | single(cross): split 7% right 20% unenrolled->word 10%
+B 0.85/0.5/0.6, settle 0.6 s     same-take: exact 88% early 95% lastEarly 6% | cross-take: exact 81% early 84% lastEarly 6% | single(cross): split 8% right 20% unenrolled->word 10%
+C 0.75/0.4/0.5, settle 0.6 s     same-take: exact 88% early 95% lastEarly 6% | cross-take: exact 81% early 84% lastEarly 6% | single(cross): split 8% right 20% unenrolled->word 10%
+D 1.0/0.6/0.7, settle 0.5 s      same-take: exact 88% early 98% lastEarly 10% | cross-take: exact 78% early 91% lastEarly 6% | single(cross): split 10% right 18% unenrolled->word 10%
+E 0.85/0.5/0.6, settle 0.9 s     same-take: exact 88% early 95% lastEarly 6% | cross-take: exact 78% early 88% lastEarly 6% | single(cross): split 8% right 20% unenrolled->word 10%

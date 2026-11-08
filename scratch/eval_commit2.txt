@@ -1,0 +1,3 @@
+OLD rule: same-take exact 92%, words shown early 88% | cross-take exact 42%, words shown early 46% (n=57) | single signs cross-take: split 7%, right 20%, un-enrolled->word 6%
+NEW rule (pause bar kept at 0.25): same-take exact 92%, words shown early 98% | cross-take exact 37%, words shown early 87% (n=63) | single signs cross-take: split 10%, right 20%, un-enrolled->word 6%
+NEW rule, next-sign bar 0.7: same-take exact 92%, words shown early 98% | cross-take exact 35%, words shown early 80% (n=59) | single signs cross-take: split 10%, right 20%, un-enrolled->word 6%

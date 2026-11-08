@@ -1,0 +1,28 @@
+........................................................................ [ 31%]
+........................................................................ [ 62%]
+........................................................................ [ 93%]
+................                                                         [100%]
+=============================== warnings summary ===============================
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:123: RuntimeWarning: All-NaN slice encountered
+    ref = np.nanmedian(seq[:, [L_HIP, R_HIP], 1], axis=1)
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:124: RuntimeWarning: All-NaN slice encountered
+    sh = np.nanmedian(seq[:, [L_SH, R_SH], 1], axis=1)
+
+tests/test_recognizer.py::test_signs_at_speeds
+  /home/eldar/Desktop/Lingestra/lingestra/features.py:125: RuntimeWarning: All-NaN slice encountered
+    up = np.nan_to_num(ref - np.nanmin(seq[:, [L_WR, R_WR], 1], axis=1), nan=-1.0)  # wrist above hip
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 8 durations ==============================
+17.58s call     tests/test_app_offscreen.py::test_real_pipeline
+14.96s call     tests/test_continuous.py::test_settings_toggle_for_continuous_signing_is_persisted_and_reaches_the_worker
+11.30s call     tests/test_app_library_ui.py::test_split_position_is_saved_with_audit_and_restored_in_a_new_window
+8.81s call     tests/test_app_library_ui.py::test_my_signs_screenshots
+8.61s setup    tests/test_learning.py::test_ui_wording_has_no_jargon
+8.51s setup    tests/test_learning.py::test_ui_inactive_sign_and_skip_message
+8.34s setup    tests/test_learning.py::test_ui_setting_default_on_persisted_audited_and_pushed
+8.15s setup    tests/test_learning.py::test_ui_bar_hides_after_timeout_and_sign_detail_lists_with_remove
+232 passed, 3 warnings in 325.26s (0:05:25)

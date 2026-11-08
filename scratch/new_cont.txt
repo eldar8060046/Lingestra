@@ -1,0 +1,17 @@
+# Continuous-signing benchmark: continuous, evaluation seeds [9301, 9302], vocabulary 30 signs, 1 enrolled take each (182 s)
+
+| stream | sequences | sequence exact | word accuracy | substituted | deleted | inserted | with clarify/unknown | worst frame ms |
+|---|---|---|---|---|---|---|---|---|
+| 2 signs, same-take | 30 | 97% | 98% | 0% | 2% | 0% | 3% | 41 |
+| 3 signs, same-take | 30 | 80% | 93% | 3% | 2% | 1% | 13% | 165 |
+| 2 signs, cross-take | 30 | 3% | 10% | 0% | 90% | 0% | 97% | 52 |
+| 3 signs, cross-take | 30 | 0% | 16% | 3% | 81% | 0% | 93% | 117 |
+| 2 signs, cross-take, matchable signs | 30 | 47% | 65% | 0% | 32% | 3% | 63% | 57 |
+| 3 signs, cross-take, matchable signs | 30 | 17% | 44% | 7% | 48% | 1% | 73% | 123 |
+
+| single sign (no join) | signs | wrongly split into >1 events | exactly the right word | un-enrolled -> a word |
+|---|---|---|---|---|
+| same-take | 30 per vocab | 0% | 97% | - |
+| cross-take | 30 per vocab | 8% | 25% | 11% |
+
+decode_sequence, 200 frames, 150 templates: 128 ms mean / 163 ms max

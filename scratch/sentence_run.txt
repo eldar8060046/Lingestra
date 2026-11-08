@@ -1,0 +1,34 @@
+Mother Cooking Biryani             exact 100%  words 100%  (S0% D0% I0%)  asked 0%  worst-clip quality 0.95  clips/word [1, 1, 1]
+Father Love Mother                 exact 100%  words 100%  (S0% D0% I0%)  asked 0%  worst-clip quality 0.91  clips/word [1, 1, 1]
+Doctor helps Mother                exact 75%  words 92%  (S0% D8% I0%)  asked 25%  worst-clip quality 1.00  clips/word [2, 1, 1]
+Mother wants Medicine              exact 100%  words 100%  (S0% D0% I0%)  asked 0%  worst-clip quality 1.00  clips/word [1, 2, 1]
+Mother Headache Call Doctor        exact 83%  words 96%  (S0% D0% I4%)  asked 0%  worst-clip quality 0.89  clips/word [1, 1, 1, 2]
+Teacher Read Book                  exact 100%  words 100%  (S0% D0% I0%)  asked 83%  worst-clip quality 0.72  clips/word [2, 1, 1]
+Sister Read Book                   exact 100%  words 100%  (S0% D0% I0%)  asked 0%  worst-clip quality 0.72  clips/word [1, 1, 1]
+Brother wants drink                exact 100%  words 100%  (S0% D0% I0%)  asked 0%  worst-clip quality 0.93  clips/word [1, 2, 1]
+Father driving Hospital wards      exact 0%  words 67%  (S0% D33% I0%)  asked 8%  worst-clip quality 0.63  clips/word [1, 1, 1]
+Teacher Explain Exam               exact 100%  words 100%  (S0% D0% I0%)  asked 83%  worst-clip quality 1.00  clips/word [2, 1, 1]
+Mother drink Medicine              exact 100%  words 100%  (S0% D0% I0%)  asked 0%  worst-clip quality 0.93  clips/word [1, 1, 1]
+Brother Write Name                 exact 0%  words 67%  (S0% D33% I0%)  asked 0%  worst-clip quality 0.69  clips/word [1, 1, 1]
+Doctor Wait                        exact 75%  words 88%  (S0% D0% I12%)  asked 8%  worst-clip quality 0.98  clips/word [2, 1]
+How Are You Fine                   exact 83%  words 92%  (S0% D0% I8%)  asked 42%  worst-clip quality 1.00  clips/word [1, 1]
+Father work School                 exact 100%  words 100%  (S0% D0% I0%)  asked 0%  worst-clip quality 0.91  clips/word [1, 1, 1]
+Mother Love Family                 exact 75%  words 92%  (S0% D8% I0%)  asked 25%  worst-clip quality 0.98  clips/word [1, 1, 1]
+
+best first:
+  100% exact | 100% words | Mother wants Medicine
+  100% exact | 100% words | Teacher Explain Exam
+  100% exact | 100% words | Mother Cooking Biryani
+  100% exact | 100% words | Brother wants drink
+  100% exact | 100% words | Mother drink Medicine
+  100% exact | 100% words | Father Love Mother
+  100% exact | 100% words | Father work School
+  100% exact | 100% words | Teacher Read Book
+  100% exact | 100% words | Sister Read Book
+  83% exact | 96% words | Mother Headache Call Doctor
+  83% exact | 92% words | How Are You Fine
+  75% exact | 92% words | Doctor helps Mother
+  75% exact | 92% words | Mother Love Family
+  75% exact | 88% words | Doctor Wait
+  0% exact | 67% words | Brother Write Name
+  0% exact | 67% words | Father driving Hospital wards

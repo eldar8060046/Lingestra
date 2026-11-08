@@ -5,14 +5,14 @@ webcam -> small Keras classifier (trained on the UAE Sign Language Dictionary) -
 confidence/latency -> clarification prompt when unsure -> sentence pasted into the signer's own
 meeting chat. No bot joins the meeting; video never leaves the laptop.
 
-## Setup
+## Setup (Linux)
     python -m venv .venv && .venv/bin/pip install -r requirements.txt  
     
   
-   # Windows: 
-   python -m venv venv
-   venv\Scripts\activate
-  pip install -r requirements.txt
+## Setup (Windows)
+    python -m venv venv
+    venv\Scripts\activate
+    pip install -r requirements.txt
 
 ## Data pipeline (already run once; data/ is large and not meant for git)
     python -m lingestra.data.scrape_dictionary      # manifest + 1244 videos (1 req/s, resumable)

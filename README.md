@@ -15,9 +15,9 @@ meeting chat. No bot joins the meeting; video never leaves the laptop.
     pip install -r requirements.txt
 
 ## Setup (Mac)
-   python3 -m venv venv
-  source venv/bin/activate
-  pip install -r requirements.txt
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
 
 ## Data pipeline (already run once; data/ is large and not meant for git)
     python -m lingestra.data.scrape_dictionary      # manifest + 1244 videos (1 req/s, resumable)

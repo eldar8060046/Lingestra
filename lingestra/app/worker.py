@@ -95,6 +95,10 @@ class RecognitionWorker(QThread):
         """The signer's taught finger poses for answering questions with 1 / 2 / 3 fingers (None = standard); thread-safe."""
         self.finger_cal = dict(cal) if cal else None
         self._cmds.put(("finger_cal", self.finger_cal))
+    def set_matching_threads(self, limit):
+        """Matcher cores: None/'auto' follows library size; a number is a user cap."""
+        value = None if limit is None or str(limit).lower() == "auto" else int(limit)
+        self._cmds.put(("matching_threads", value))
     def set_label_map(self, mapping): self._cmds.put(("label_map", dict(mapping or {})))   # copy: thread-safe
 
     # ---- internals ----
@@ -215,6 +219,10 @@ class RecognitionWorker(QThread):
                             continue
                         if c == "finger_cal":
                             rec.set_finger_cal(v)
+                            continue
+                        if c == "matching_threads":
+                            from ..live import fastspot
+                            fastspot.set_thread_limit(v)
                             continue
                         if c == "templates":
                             try:

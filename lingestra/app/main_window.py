@@ -11,6 +11,7 @@ never touched.
 import html
 import json
 import math
+import os
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -464,6 +465,33 @@ class MainWindow(QMainWindow):
                            self.tech_sw))
         v.addWidget(c3)
 
+        # recognition speed
+        cc = card(); ccv = QVBoxLayout(cc); ccv.setContentsMargins(18, 14, 18, 14); ccv.setSpacing(8)
+        ccv.addWidget(heading("Recognition speed", 19))
+        self.match_cores = max(1, os.cpu_count() or 1)
+        self.multi_core_sw = Switch(bool(self.settings.get("multi_core", True)))
+        self.multi_core_sw.toggled.connect(self._on_multi_core)
+        ccv.addWidget(_row("Use several CPU cores while I sign",
+                           "This speeds up matching when many signs are switched on. Turn it off to use one core.",
+                           self.multi_core_sw))
+        self.match_cores_box = QComboBox(); self.match_cores_box.setMinimumHeight(42)
+        self.match_cores_box.addItem("Automatic (recommended)", None)
+        for n in range(1, self.match_cores + 1):
+            self.match_cores_box.addItem(f"{n} core" if n == 1 else f"{n} cores", n)
+        saved_cores = self.settings.get("matching_cores", None)
+        try:
+            saved_cores = int(saved_cores) if saved_cores not in (None, "auto") else None
+        except (TypeError, ValueError):
+            saved_cores = None
+        self.match_cores_box.setCurrentIndex(max(0, self.match_cores_box.findData(saved_cores)))
+        self.match_cores_box.currentIndexChanged.connect(self._on_matching_cores)
+        self.match_cores_box.setEnabled(self.multi_core_sw.isChecked())
+        ccv.addWidget(plain_label(f"This computer can use {self.match_cores} logical CPU cores.", style=MUTED_CSS))
+        ccv.addWidget(self.match_cores_box)
+        ccv.addWidget(hint("Automatic uses fewer cores for a small sign library and more for a large one, while leaving room for the camera. "
+                           "Choose a number to set a maximum for sign recognition.", 14))
+        v.addWidget(cc)
+
         # finger numbers
         cf = card(); cfv = QVBoxLayout(cf); cfv.setContentsMargins(18, 14, 18, 14); cfv.setSpacing(6)
         cfv.addWidget(heading("Choosing a word with your fingers", 19))
@@ -668,6 +696,21 @@ class MainWindow(QMainWindow):
         self._save_setting("continuous", bool(on))
         self._push_continuous()
 
+    def _on_matching_cores(self, _index):
+        limit = self.match_cores_box.currentData()
+        self._save_setting("matching_cores", limit)
+        self._push_matching_cores()
+
+    def _on_multi_core(self, on):
+        self.match_cores_box.setEnabled(bool(on))
+        self._save_setting("multi_core", bool(on))
+        self._push_matching_cores()
+
+    def _push_matching_cores(self):
+        if self.worker is not None and hasattr(self.worker, "set_matching_threads"):
+            limit = self.settings.get("matching_cores", None) if self.settings.get("multi_core", True) else 1
+            self.worker.set_matching_threads(limit)
+
     @staticmethod
     def _valid_cal(cal):
         """Taught finger poses as saved: {'1': [5 numbers], ...}; anything else is ignored."""
@@ -861,6 +904,7 @@ class MainWindow(QMainWindow):
         self._push_finger_cal()
         self._push_finger_answers()
         self._push_hold_commit()
+        self._push_matching_cores()
         self._push_send_policy()
         w.start()
         self.set_pill("ready")

@@ -28,6 +28,10 @@ except Exception:                                      # numba missing or broken
 INF = np.float32(1e9)
 _LOCK = threading.Lock()                               # numba's default threading layer is not re-entrant
 _WARM = {"started": False, "done": threading.Event(), "ok": False}
+# None means choose a sensible count from the number of examples.  This is deliberately
+# process-local rather than an environment variable: the Settings page can change it while
+# the webcam worker is running.
+_THREAD_LIMIT = None
 
 
 def available() -> bool:
@@ -39,12 +43,41 @@ def ready() -> bool:
     return _OK and _WARM["ok"]
 
 
-def n_threads() -> int:
+def cpu_count() -> int:
+    """Logical CPUs available to this process (at least one)."""
+    return max(1, os.cpu_count() or 1)
+
+
+def set_thread_limit(limit=None) -> None:
+    """Use ``limit`` matcher threads, or None for the automatic policy.
+
+    The actual change is made inside ``spot_batch`` while _LOCK is held, because
+    Numba's thread-pool setting is process-wide.
+    """
+    global _THREAD_LIMIT
+    if limit is None or str(limit).lower() == "auto":
+        _THREAD_LIMIT = None
+        return
+    try:
+        _THREAD_LIMIT = max(1, min(int(limit), cpu_count()))
+    except (TypeError, ValueError):
+        _THREAD_LIMIT = None
+
+
+def n_threads(n_examples=None) -> int:
     if not _OK:
         return 1
     want = os.environ.get("LINGESTRA_THREADS")
-    cores = os.cpu_count() or 2
-    n = int(want) if want and want.isdigit() else max(1, min(8, cores - 4))
+    if want and want.isdigit():               # useful for headless benchmarking / support
+        n = int(want)
+    elif _THREAD_LIMIT is not None:
+        n = _THREAD_LIMIT
+    else:
+        # Keep capacity for MediaPipe and the UI.  More threads only pay off for a
+        # substantial personal library; small libraries are faster than the camera either way.
+        examples = int(n_examples or 0)
+        target = 4 if examples < 80 else 8 if examples < 400 else 16
+        n = min(target, max(1, cpu_count() - 2))
     return max(1, min(n, numba.config.NUMBA_NUM_THREADS))
 
 
@@ -142,7 +175,7 @@ def spot_batch(DX, DM, dlens, Q, cfg):
     QMc = np.ascontiguousarray(Q.M, np.bool_)
     dl = np.ascontiguousarray(dlens, np.int64)
     with _LOCK:
-        numba.set_num_threads(n_threads())
+        numba.set_num_threads(n_threads(N))
         _kernel(DXc, DMc, dl, QXc, QMc, W, SC, S0, S1, float(cfg.c_miss), np.float32(cfg.step_pen), out_d, out_s)
     return out_d, out_s
 
